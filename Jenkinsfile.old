@@ -4,7 +4,7 @@ tools {
      maven 'maven'
   }
   stages {
-  stage ('Build') {
+  stage ('Initialize') {
 steps {
  echo 'Hello'
 }
