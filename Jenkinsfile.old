@@ -9,6 +9,13 @@ steps {
  sh 'mvn clean package'
 }
   }
+ stage ('Deploy-to-Tomcat') {
+steps {
+sshagent (['tomcat']) {
+  sh 'scp -o StrictHostKeyChecking=no target/*.war ubuntu@13.60.61.177:/opt/apache-tomcat-10.1.40/webapps/webapp.war'
+}
+  }
+}
 }
 }
 
