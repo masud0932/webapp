@@ -16,7 +16,7 @@ sh 'docker run gesellix/trufflehog --json https://github.com/masud0932/webapp.gi
 sh 'cat trufflehog'
 }
   }
-    stage ('Build') {
+    stage ('SCA Test') {
 steps {
  sh 'rm owasp* || true'
  sh 'wget https://raw.github.com/masud0932/webapp/blob/master/owasp-dependency-check.sh'
