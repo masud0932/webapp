@@ -19,9 +19,10 @@ sh 'cat trufflehog'
     stage ('SCA Test') {
 steps {
  sh 'rm owasp* || true'
- sh 'wget https://raw.github.com/masud0932/webapp/blob/master/owasp-dependency-check.sh'
+ sh 'wget https://raw.githubusercontent.com/masud0932/webapp/refs/heads/master/owasp-dependency-check.sh'
  sh 'chmod +x owasp-dependency-check.sh'
  sh 'bash owasp-dependency-check.sh'
+ sh 'cat /var/lib/jenkins/owasp-dependency-check/reports/dependency-check-report.xml'
 }
   }
     stage ('Build') {
