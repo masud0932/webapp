@@ -12,7 +12,7 @@ steps {
    stage ('Chek-Git_Secrets') {
 steps {
 sh 'rm trufflehog || true'
- sh 'docker run gesellix/trufflehog --json https://github.com/masud0932/webapp.git > trufflehog'
+sh 'docker run gesellix/trufflehog --json https://github.com/masud0932/webapp.git > trufflehog'
 sh 'cat trufflehog'
 }
   }
