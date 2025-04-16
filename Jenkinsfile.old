@@ -30,7 +30,7 @@ steps {
    stage ('SAST Test') {
 steps {
 withSonarQubeEnv ('sonar') {
- sh 'sonar-scanner'
+ sh 'mvn sonar:sonar'
 }
 }
   }
